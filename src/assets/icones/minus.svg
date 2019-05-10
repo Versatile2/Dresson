@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="26.5" height="26.5" viewBox="0 0 26.5 26.5">
+  <g id="remove_icon" data-name="remove icon" transform="translate(0.75 0.75)">
+    <circle id="Oval" cx="12.5" cy="12.5" r="12.5" fill="#fff" stroke="#8dd4bd" stroke-miterlimit="10" stroke-width="1.5"/>
+    <path id="Line" d="M0,.5H8" transform="translate(9 12)" fill="none" stroke="#8dd4bd" stroke-linecap="square" stroke-miterlimit="10" stroke-width="1.5"/>
+  </g>
+</svg>

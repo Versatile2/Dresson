@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16.5" height="16.5" viewBox="0 0 16.5 16.5">
+  <g id="add-icon" transform="translate(0.75 0.75)">
+    <rect id="add-icon_background" data-name="add-icon background" width="15" height="15" fill="rgba(0,0,0,0)"/>
+    <g id="add_icon" data-name="add icon">
+      <circle id="Oval" cx="7.5" cy="7.5" r="7.5" fill="#fff" stroke="#8dd4bd" stroke-miterlimit="10" stroke-width="1.5"/>
+      <g id="Group" transform="translate(4.8 4.8)">
+        <path id="Line_Copy" data-name="Line Copy" d="M0,.5H5.4" transform="translate(0 2.2)" fill="none" stroke="#8dd4bd" stroke-linecap="square" stroke-miterlimit="10" stroke-width="1.5"/>
+        <path id="Line_Copy-2" data-name="Line Copy" d="M0,0H5.4" transform="translate(2.7 5.4) rotate(-90)" fill="none" stroke="#8dd4bd" stroke-linecap="square" stroke-miterlimit="10" stroke-width="1.5"/>
+      </g>
+    </g>
+  </g>
+</svg>

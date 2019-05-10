@@ -1,0 +1,1905 @@
+@import "normalize";
+@import "variables";
+@import "mixins";
+
+@font-face {
+  font-family: "Museo";
+  src: local("Museo"), local("MuseoSans"),
+    url("../fonts/MuseoSans300.otf") format("OpenType");
+  // src: url("../fonts/MuseoSans-100.otf") format("OpenType"),
+  //   url("../fonts/MuseoSans-100Italic.otf") format("OpenType"),
+  // url("../fonts/MuseoSans-300Italic.otf") format("OpenType"),
+  // url("../fonts/MuseoSans-500.otf") format("OpenType"),
+  // url("../fonts/MuseoSans-500_Italic.otf") format("OpenType"),
+  //src: url("../fonts/MuseoSans-700.otf") format("OpenType");
+  // url("../fonts/MuseoSans-700Italic.otf") format("OpenType"),
+  // url("../fonts/MuseoSans-900.otf") format("OpenType"),
+  // url("../fonts/MuseoSans-900Italic.otf") format("OpenType");
+}
+
+/*//////////////// GENERAL  ////////////// */
+
+/*// HEADER // */
+.header {
+  background-color: $blue;
+  height: 80px;
+}
+
+.headerFlex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2em 0em 0em;
+}
+
+.notifRound {
+  background-color: red;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15px;
+  height: 15px;
+  border-radius: 7.5px;
+  position: absolute;
+  top: 30px;
+  right: 180px;
+  font-family: $font;
+}
+
+// .notifHeaderLink {
+//   text-decoration: none;
+//   position: relative;
+// }
+
+/*/// NAV ///*/
+.nav {
+  display: flex;
+  justify-content: space-between;
+  //margin: 2em 0em 0em;
+  background-color: $greylight;
+  padding: 5.5em 1em 0.5em;
+}
+
+.navDresson,
+.navBrands,
+.navScan,
+.navOutfit,
+.navFav {
+  text-decoration: none;
+  color: $greydark;
+  text-transform: uppercase;
+  font-size: 1em;
+  font-weight: 900;
+  position: relative;
+  height: 13px;
+  cursor: pointer;
+  font-family: $font;
+}
+
+// .navDresson--active,
+// .navBrands--active,
+// .navScan--active,
+// .navFav--active,
+// .navOutfit--active {
+//   text-decoration: none;
+//   color: $blue;
+//   text-transform: uppercase;
+//   font-size: 1em;
+//   font-weight: 900;
+//   position: relative;
+//   height: 13px;
+//   cursor: pointer;
+// }
+
+.navDresson:before {
+  content: "";
+  background-image: url(../icones/dresson.svg);
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-size: 50px;
+  width: 24px;
+  height: 32px;
+  margin: 0 auto;
+  position: absolute;
+  top: -42px;
+  left: calc(50% - 12px);
+}
+
+// .navDresson--active:before {
+//   content: "";
+//   background-image: url(../images/dresson.svg);
+//   background-position: right top;
+//   background-repeat: no-repeat;
+//   background-size: 50px;
+//   width: 24px;
+//   height: 32px;
+//   margin: 0 auto;
+//   position: absolute;
+//   top: -42px;
+//   left: calc(50% - 12px);
+// }
+
+.navBrands:before {
+  content: "";
+  background-image: url(../icones/brand.svg);
+  background-repeat: no-repeat;
+  background-position: left -2px;
+  background-size: 56px;
+  width: 28px;
+  height: 28.5px;
+  margin: 0 auto;
+  position: absolute;
+  top: -38.5px;
+  left: calc(50% - 14px);
+}
+
+// .nav__brands--active:before {
+//   content: "";
+//   background-image: url(../images/brand.svg);
+//   background-repeat: no-repeat;
+//   background-position: right -2px;
+//   background-size: 56px;
+//   width: 28px;
+//   height: 28.5px;
+//   margin: 0 auto;
+//   position: absolute;
+//   top: -38.5px;
+//   left: calc(50% - 14px);
+// }
+
+.navScan:before {
+  content: "";
+  background-image: url(../icones/scan.svg);
+  background-repeat: no-repeat;
+  background-size: 56px;
+  background-position: left -1px;
+  width: 28px;
+  height: 28px;
+  margin: 0 auto;
+  position: absolute;
+  top: -38px;
+  left: calc(50% - 14px);
+}
+
+// .nav__scan--active:before {
+//   content: "";
+//   background-image: url(../images/scan.svg);
+//   background-repeat: no-repeat;
+//   background-size: 56px;
+//   background-position: right -1px;
+//   width: 28px;
+//   height: 28px;
+//   margin: 0 auto;
+//   position: absolute;
+//   top: -38px;
+//   left: calc(50% - 14px);
+// }
+
+.navFav:before {
+  content: "";
+  background-image: url(../icones/favorites.svg);
+  background-position: left -2px;
+  background-repeat: no-repeat;
+  background-size: 56px;
+  width: 28px;
+  height: 25.89px;
+  margin: 0 auto;
+  position: absolute;
+  top: -35.89px;
+  left: calc(50% - 14px);
+}
+
+// .nav__fav--active:before {
+//   content: "";
+//   background-image: url(../images/favorites.svg);
+//   background-position: right -2px;
+//   background-repeat: no-repeat;
+//   background-size: 56px;
+//   width: 28px;
+//   height: 25.89px;
+//   margin: 0 auto;
+//   position: absolute;
+//   top: -35.89px;
+//   left: calc(50% - 14px);
+// }
+
+.navOutfit:before {
+  content: "";
+  background-image: url(../icones/outfits.svg);
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-size: 56px;
+  width: 28px;
+  height: 25.89px;
+  margin: 0 auto;
+  position: absolute;
+  top: -35.89px;
+  left: calc(50% - 14px);
+}
+
+// .nav__outfit--active:before {
+//   content: "";
+//   background-image: url(../images/outfits.svg);
+//   background-position: right top;
+//   background-repeat: no-repeat;
+//   background-size: 56px;
+//   width: 28px;
+//   height: 25.89px;
+//   margin: 0 auto;
+//   position: absolute;
+//   top: -35.89px;
+//   left: calc(50% - 14px);
+// }
+
+.linkDetail {
+  @include linkblue;
+  display: flex;
+}
+
+.linkDetail::after {
+  content: url(../icones/arrow.svg);
+  display: block;
+  width: 15px;
+  height: 15px;
+  padding-left: 0.3em;
+}
+
+.linkMore {
+  @include buttonblue;
+  position: relative;
+  left: 30px;
+  cursor: pointer;
+}
+
+.contentImgIcone {
+  position: absolute;
+  top: 10px;
+  left: 105px;
+  width: 25px;
+  height: 25px;
+}
+
+.contentImgBgcone {
+  position: absolute;
+  top: 10px;
+  left: 105px;
+  background-color: #ffffff;
+  width: 25px;
+  height: 25px;
+  border: 1px solid $blue;
+  border-radius: 13px;
+}
+
+.sliderContent {
+  position: relative;
+  overflow: hidden;
+  height: 230px;
+}
+
+/*//////////////// START ////////////// */
+
+.start {
+  width: 320px;
+  height: 568px;
+  position: relative;
+  margin: 0 auto;
+  background: url("../images/Bitmap.png") no-repeat center;
+  //background-size: 320px 568px;
+  font-size: 62.5%;
+  font-family: $font;
+}
+
+.filter {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: black;
+  opacity: 0.8;
+}
+
+.logoStart {
+  margin: 0em auto;
+  padding-top: 10em;
+  display: block;
+}
+
+.buttonBlue {
+  @include buttonblue;
+}
+
+.buttonWhite {
+  @include buttonwhite;
+}
+
+.buttonStart {
+  position: relative;
+  top: 30px;
+  left: 30px;
+}
+
+/*//////////////// SIGN UP/SIGN IN ////////////// */
+#signup,
+#signin {
+  width: 320px;
+  //height: 568px;
+  margin: 0 auto;
+  font-size: 62.5%;
+  font-family: $font;
+}
+
+.headerBgc {
+  background: url("../images/Bitmap.png") no-repeat center;
+  background-size: cover;
+  background-color: black;
+}
+
+.signUpLogo,
+.signInLogo {
+  margin: 0 auto;
+  display: block;
+  padding: 2em 0em;
+}
+
+.signUpTitle,
+.signInTitle {
+  @include titlemainblue;
+}
+
+.formInput {
+  outline: none;
+  border: none;
+  box-shadow: none;
+  border-bottom: 1px solid $blue;
+  margin-bottom: 2em;
+  padding: 0.8em;
+}
+
+.formLabel {
+  text-transform: uppercase;
+  font-weight: 100;
+  font-family: $font;
+}
+
+.formFlex {
+  display: flex;
+  flex-direction: column;
+  margin: 0em $marginleft;
+}
+
+.formButton {
+  @include buttonblue;
+  border: none;
+  display: block;
+  margin: 1em auto;
+  width: 260px;
+}
+
+.signin__link {
+  margin: 1em $marginleft;
+  display: block;
+  color: blue;
+  cursor: pointer;
+}
+
+/*//////////////// HOMEPAGE ////////////// */
+
+/*/// HEADER ///*/
+#homepage {
+  width: 320px;
+  //height: 568px;
+  margin: 0 auto;
+  font-size: 62.5%;
+  font-family: $font;
+}
+
+.homepageHeader {
+  background-color: $blue;
+  height: 110px;
+}
+
+.homepageProfileFlex {
+  display: flex;
+  justify-content: space-around;
+  padding: 2em 0em 0em;
+}
+
+.homepageProfileImg {
+  width: 15%;
+  height: auto;
+  position: relative;
+  top: 15px;
+  left: 110px;
+}
+
+/*/// MAIN TITLE ///*/
+
+.homepageTitleMain {
+  @include titlemainblue;
+  color: grey;
+  text-align: center;
+  margin: 3.5em 0em 1em;
+  font-size: 2em;
+}
+
+/*/// SECOND TITLE ///*/
+
+.homepageTitleSecond {
+  @include titlesecondblue;
+}
+
+/*/// MY FAV / FAV FRIENDS ///*/
+.homepageItemFlex {
+  display: flex;
+  align-items: flex-start;
+  position: absolute;
+  top: 0;
+  right: calc(50% - 147px);
+}
+
+.homepageImg {
+  width: 147px;
+  height: auto;
+}
+
+.heartContentIcone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 10px;
+  left: calc(50% - 15px);
+  background-color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+}
+
+.emptyheart__img--icone {
+  width: 21px;
+  height: 19.14px;
+}
+
+.heartImgIcone {
+  position: relative;
+  top: 1px;
+  right: 0.05px;
+}
+
+/*/// BUTTONS ///*/
+
+.homepageButton {
+  display: flex;
+  justify-content: space-around;
+  margin: 4em 0em;
+}
+
+.homepageInvite,
+.homepageSearch,
+.homepageFriend {
+  background-color: $greylight;
+  border-radius: 50%;
+  padding: 2em;
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.homepageRoundButtonLink {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-decoration: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+.homepageRoundButtonText {
+  text-decoration: none;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  color: $greydark;
+  text-align: center;
+  display: inline-block;
+  margin: 1em auto;
+  font-weight: 900;
+  width: 60px;
+  font-family: $font;
+}
+
+/*//////////////// BRANDPAGE ////////////// */
+
+#brand {
+  width: 320px;
+  //height: 568px;
+  margin: 0 auto;
+  font-size: 62.5%;
+  font-family: $font;
+}
+
+.brandTitle {
+  @include titlesecondblue;
+  //margin-left: 1.2em;
+}
+
+/*/// BRANDS LOGO ///*/
+
+.brandImg {
+  width: 90px;
+  height: auto;
+  border: 1px solid $greylight;
+  margin: 0.3em;
+}
+
+.brandFlex {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 15px;
+  margin-bottom: 3em;
+}
+
+/*//////////////// BRANDPAGE ////////////// */
+
+#brandtwo {
+  width: 320px;
+  //height: 568px;
+  margin: 0 auto;
+  font-size: 62.5%;
+  font-family: $font;
+}
+
+.brandtwoTitle {
+  @include titlesecondblue;
+  margin-bottom: 0em;
+}
+
+.brandtwoCat {
+  display: flex;
+  justify-content: space-between;
+  margin: 0em 1.5em;
+}
+
+.brandtwo__cat--all {
+  text-decoration: none;
+  color: white;
+  background-color: $blue;
+  border-radius: 14.5px; //16.5px
+  padding: 8px 20px; //10px 20px
+  font-size: 1.3em;
+}
+
+.brandtwo__cat--tops,
+.brandtwo__cat--pants,
+.brandtwo__cat--skirts {
+  text-decoration: none;
+  color: $blue;
+  background-color: #ffffff;
+  border: 1px solid $blue;
+  border-radius: 14.5px; //16.5px
+  padding: 8px 20px; //10px 20px
+  font-size: 1.3em;
+}
+
+.brandtwoTop,
+.brandtwoPant {
+  width: 90%;
+  height: auto;
+}
+
+.detailoutfit__addicon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 15%;
+  height: auto;
+}
+
+.brandtwoFlex {
+  display: flex;
+  margin-left: 1.5em;
+  margin-top: 3em;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.brandtwoText {
+  color: $greydark;
+  font-size: 1.3em;
+  margin-top: 0.8em;
+  font-family: $font;
+}
+
+.brandtwoDetail {
+  margin-left: 0em;
+}
+
+.brandtwoMore {
+  margin-bottom: 5em;
+}
+
+.brandtwoContent {
+  position: relative;
+}
+
+/*//////////////// DETAILITEM ////////////// */
+
+#detailitem {
+  width: 320px;
+  //height: 568px;
+  margin: 0 auto;
+  font-size: 62.5%;
+  font-family: $font;
+}
+
+.detailItemTop {
+  width: 50%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.detailItemTitle {
+  font-size: 1.3em;
+  color: $blue;
+  font-weight: bold;
+  margin: 20px 0px;
+  position: relative;
+  left: 285px;
+  font-family: $font;
+}
+
+.detailItemTitlePrice {
+  color: $greydark;
+  position: relative;
+  left: 255px;
+}
+
+.detailItemItem {
+  color: $greydark;
+  font-size: 1.3em;
+  margin: 13px 15px;
+  font-family: $font;
+}
+
+.detailItemDiv {
+  margin-top: 5em;
+}
+
+.detailItemCat {
+  padding-bottom: 1em;
+  border-bottom: 2px solid $greylight;
+}
+
+.detailItemDescription {
+  margin: 10px 15px;
+  font-size: 1.3em;
+  color: $greydark;
+  line-height: 1.5;
+  border-bottom: 2px solid $greylight;
+  padding-bottom: 1em;
+  font-family: $font;
+}
+
+.detailItemEdit {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3em;
+}
+
+.detailItemRemove,
+.detailItemShare,
+.detailItemDelete {
+  text-decoration: none;
+  color: $greydark;
+  text-transform: uppercase;
+  font-size: 1.3em;
+  margin: 0.5em 1.5em;
+  display: flex;
+  align-items: center;
+  font-family: $font;
+}
+
+.detailItemRemove:before {
+  content: url("../icones/removeIcon.svg");
+  width: 15px;
+  height: 15px;
+  padding-right: 0.3em;
+}
+
+.detailItemShare:before {
+  content: url("../icones/shareIcon.svg");
+  width: 15px;
+  height: 15px;
+  padding-right: 0.3em;
+}
+
+.detailItemDelete:before {
+  content: url("../icones/deleteIcon.svg");
+  width: 15px;
+  height: 15px;
+  padding-right: 0.3em;
+}
+
+.detailItemChemise,
+.detailItemPant {
+  width: 30%;
+  height: 30%;
+}
+
+.detailItemOutfit {
+  display: flex;
+  margin: 0em 1.5em;
+}
+
+.detailItemUsed {
+  margin-bottom: 5em;
+}
+
+/*//////////////// DETAILOUTFIT ////////////// */
+
+#detailoutfit {
+  width: 320px;
+  //height: 568px;
+  margin: 0 auto;
+  font-size: 62.5%;
+  font-family: $font;
+}
+
+.detailOutfitTitle {
+  @include titlesecondblue;
+  position: relative;
+  margin: 2em 2em 1em;
+}
+
+.detailOutfitReturn {
+  text-decoration: none;
+}
+
+.detailoutfit__title:before {
+  content: url("../icones/chevronLeftSolid.svg");
+  display: block;
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  top: 0px;
+  left: -15px;
+}
+
+.detailOutfitCat {
+  display: flex;
+  margin: 1em 1.5em 3em;
+}
+
+.detailoutfit__cat--create {
+  text-decoration: none;
+  color: $blue;
+  background-color: #ffffff;
+  border-radius: 16.5px;
+  border: 1px solid $blue;
+  padding: 10px 40px;
+  font-size: 1.3em;
+  margin: 0em 1em 0em 0em;
+}
+
+.detailoutfit__cat--outfit {
+  text-decoration: none;
+  color: white;
+  background-color: $blue;
+  border-radius: 16.5px;
+  padding: 10px 30px;
+  font-size: 1.3em;
+}
+
+.detailOutfitImg {
+  width: 100%;
+  height: auto;
+}
+
+.detailOutfitContent {
+  display: flex;
+  margin: 0em 1.5em 2em;
+}
+
+.detailOutfitInfo {
+  font-size: 1.3em;
+  color: $greydark;
+  margin: 0.5em 0em;
+  font-family: $font;
+}
+
+.detailOutfitLike {
+  font-size: 1.3em;
+  color: $greydark;
+  display: flex;
+  align-items: center;
+  margin: 0em 1.5em 1em;
+  border-bottom: 1px solid $greylight;
+  padding-bottom: 1.5em;
+  font-family: $font;
+}
+
+.detailOutfitLike:before {
+  content: url("../icones/favoriteIcon.svg");
+  padding-right: 0.3em;
+}
+
+.detailOutfitText {
+  font-size: 1.3em;
+  color: $greydark;
+  padding-top: 0.5em;
+  line-height: 1.5;
+  margin-left: 1.5em;
+  border-bottom: 1px solid $greylight;
+  padding-bottom: 1.5em;
+  margin-bottom: 1.5em;
+  font-family: $font;
+}
+
+.detailOutfitEdit,
+.detailOutfitDelete,
+.detailOutfitFav,
+.detailOutfitFb {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $greydark;
+  display: flex;
+  align-items: center;
+  margin: 1em 1.5em;
+  //font-size: 1em;
+  font-family: $font;
+}
+
+.detailOutfitEdit:before {
+  content: url("../icones/edit.svg");
+  width: 15px;
+  height: 15px;
+  padding-right: 0.3em;
+}
+
+.detailOutfitDelete:before {
+  content: url("../icones/deleteIcon.svg");
+  width: 15px;
+  height: 15px;
+  padding-right: 0.3em;
+}
+
+.detailOutfitFb:before {
+  content: url("../icones/shareSolid.svg");
+  width: 13px;
+  height: 13px;
+  padding-right: 0.4em;
+}
+
+.detailOutfitFav:before {
+  content: url("../icones/plusSolid.svg");
+  width: 12px;
+  height: 12px;
+  padding-right: 0.5em;
+}
+
+.detailOutfitEditButton {
+  margin-bottom: 4em;
+}
+
+/*//////////////// MYOUTFIT ////////////// */
+
+// #myoutfit {
+//   width: 320px;
+//   margin: 0 auto;
+//   font-size: 62.5%;
+//   font-family: $font;
+// }
+
+.myoutfitTitle {
+  @include titlesecondblue;
+}
+
+.myoutfit__flex--form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  //margin-bottom: 1.3em;
+}
+
+.searchInput {
+  border: none;
+  width: 280px;
+  margin-left: 10px;
+  background-color: initial;
+  outline: none;
+  font-size: 1.2em;
+}
+
+.contentSearch {
+  position: relative;
+  //border: 1px solid $greylight;
+  display: flex;
+  align-items: center;
+  padding: 0.5em;
+  background-color: $greylight;
+  border-radius: 20px;
+  margin-bottom: 0.8em;
+  width: 280px;
+}
+
+// .brandtwo__contentsearch {
+//   margin: 0em 0em 3em;
+// }
+
+.search {
+  margin-left: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+.searchMagnifyingicon {
+  position: absolute;
+  left: 260px;
+  top: calc(50% - 7.5px);
+  width: 15px;
+  height: 15px;
+}
+
+.searchLabel {
+  visibility: hidden;
+  text-indent: -9999px;
+}
+
+.myoutfitImg {
+  width: 50%;
+  height: 50%;
+}
+
+.myoutfitFlex {
+  display: flex;
+  margin: 1em 1.5em 0em;
+  position: relative;
+}
+
+.myoutfit__detail {
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+
+.myoutfit__lastoutfit {
+  margin-bottom: 5em;
+}
+
+/*//////////////// CREATEOUTFIT ////////////// */
+
+#createoutfit {
+  width: 320px;
+  margin: 0 auto;
+  font-size: 62.5%;
+  font-family: $font;
+}
+
+.createoutfitTitle {
+  @include titlesecondblue;
+  margin-bottom: 0em;
+}
+
+.createoutfit__search {
+  margin-bottom: 3em;
+  margin-top: 0em;
+}
+
+.createoutfitCat {
+  display: flex;
+  margin: 1em 1.5em;
+}
+
+.createoutfitCatCreate {
+  text-decoration: none;
+  color: white;
+  background-color: $blue;
+  border-radius: 16.5px;
+  padding: 10px 40px;
+  font-size: 1.3em;
+  margin: 0em 1em 0em 0em;
+}
+
+.createoutfitCatOutfit {
+  text-decoration: none;
+  color: $blue;
+  background-color: #ffffff;
+  border-radius: 16.5px;
+  border: 1px solid $blue;
+  padding: 10px 30px;
+  font-size: 1.3em;
+}
+
+.createoutfitText {
+  font-size: 1.3em;
+  color: $greydark;
+  line-height: 1.5;
+  margin: 1.8em 1.5em 0.5em;
+  font-family: $font;
+}
+
+.createoutfitFlex {
+  display: flex;
+  margin-left: 1.5em;
+  margin-top: 3em;
+}
+
+.createoutfitTop,
+.createoutfitPant {
+  width: 90%;
+  height: auto;
+}
+
+.createoutfitDetail {
+  margin-left: 0em;
+  margin-top: 0.5em;
+}
+
+.createoutfitBrand {
+  font-size: 1.3em;
+  color: $greydark;
+  margin-top: 0.5em;
+  font-family: $font;
+}
+
+.createOutfitSubmit {
+  text-decoration: none;
+  border-radius: 50px;
+  background-color: $blue;
+  color: white;
+  font-family: $font;
+  text-transform: uppercase;
+  margin: 2em auto 3em;
+  display: block;
+  font-size: 1.3em;
+  padding: 10px 55px;
+}
+
+.createoutfitContent {
+  position: relative;
+}
+
+/*//////////////// FAVORITES ////////////// */
+#favorites {
+  width: 320px;
+  margin: 0 auto;
+  font-size: 62.5%;
+  font-family: $font;
+}
+
+.favoritesTitle {
+  @include titlesecondblue;
+}
+
+.favoritesCat {
+  display: flex;
+  margin: 1em 1.5em;
+}
+
+// .favoritesCatFav {
+//   text-decoration: none;
+//   color: white;
+//   background-color: $blue;
+//   border-radius: 21.5px;
+//   padding: 10px 30px;
+//   font-size: 1.3em;
+//   margin: 0em 1em 0em 0em;
+//   font-family: $font;
+// }
+
+.catFull {
+  text-decoration: none;
+  color: white;
+  background-color: $blue;
+  border-radius: 21.5px;
+  padding: 10px 30px;
+  font-size: 1.3em;
+  margin: 0em 1em 0em 0em;
+  font-family: $font;
+}
+
+// .favoritesCatFriend {
+//   text-decoration: none;
+//   color: $blue;
+//   background-color: #ffffff;
+//   border-radius: 21.5px;
+//   border: 1px solid $blue;
+//   padding: 10px 30px;
+//   font-size: 1.3em;
+//   font-family: $font;
+// }
+
+.catEmpty {
+  text-decoration: none;
+  color: $blue;
+  background-color: #ffffff;
+  border-radius: 21.5px;
+  border: 1px solid $blue;
+  padding: 10px 30px;
+  font-size: 1.3em;
+  font-family: $font;
+}
+
+.favoritesFlex {
+  display: flex;
+  margin: 2em 2em 1em;
+  position: relative;
+}
+
+.favoritesImg {
+  width: 50%;
+  height: 50%;
+}
+
+.favorites__detail {
+  margin-left: 1.3em;
+}
+
+.favorites__more {
+  margin-bottom: 3em;
+}
+
+/*//////////////// FRIEND FAVORITES ////////////// */
+
+#friendfav {
+  width: 320px;
+  margin: 0 auto;
+  font-size: 62.5%;
+  font-family: $font;
+}
+
+.friendfavTitle {
+  @include titlesecondblue;
+}
+
+.friendfavCat {
+  display: flex;
+  margin: 1em 1.5em 3em;
+}
+
+.friendfavCatFav {
+  text-decoration: none;
+  color: $blue;
+  background-color: #ffffff;
+  border-radius: 16.5px;
+  border: 1px solid $blue;
+  padding: 10px 30px;
+  font-size: 1.3em;
+  margin: 0em 1em 0em 0em;
+}
+
+.friendfavCatFriend {
+  text-decoration: none;
+  color: white;
+  background-color: $blue;
+  border-radius: 16.5px;
+  padding: 10px 20px;
+  font-size: 1.3em;
+  font-family: $font;
+}
+
+.friendfavFlex {
+  display: flex;
+  margin: 1em 2em 1em;
+  position: relative;
+}
+
+.friendfavTop,
+.friendfavPant {
+  width: 50%;
+  height: 50%;
+}
+.friendfavFriendFlex {
+  display: flex;
+}
+
+.friendfavImgFriend {
+  width: 30px;
+  height: 30px;
+  margin-left: 1.8em;
+}
+
+.friendfavNameFriend {
+  margin-left: 0.5em;
+  margin-top: 1em;
+  font-family: $font;
+}
+
+.friendfavDetail {
+  margin-left: 1.3em;
+}
+
+.friendfavContent,
+.friendfavMore {
+  margin-bottom: 3em;
+}
+
+.detailoutfitfriendContent {
+  margin-bottom: 1em;
+  margin-top: 3em;
+}
+
+/*//////////////// CREATE OUTFIT TWO ////////////// */
+
+#createoutwo {
+  width: 320px;
+  margin: 0 auto;
+  font-size: 62.5%;
+  font-family: $font;
+}
+
+.createoutwo__title {
+  @include titlesecondblue;
+}
+
+.createoutwo__cat {
+  display: flex;
+  margin: 1em 1.5em;
+}
+
+.createoutwo__cat--create {
+  text-decoration: none;
+  color: white;
+  background-color: $blue;
+  border-radius: 16.5px;
+  padding: 10px 40px;
+  font-size: 1.3em;
+  margin: 0em 1em 0em 0em;
+}
+
+.createoutwo__cat--outfit {
+  text-decoration: none;
+  color: $blue;
+  background-color: #ffffff;
+  border-radius: 16.5px;
+  border: 1px solid $blue;
+  padding: 10px 30px;
+  font-size: 1.3em;
+}
+
+.createoutwo__flex {
+  display: flex;
+  margin-left: 1.8em;
+  margin-top: 3em;
+}
+
+.createoutwo__top,
+.createoutwo__pant {
+  width: 90%;
+  height: auto;
+}
+
+.createoutwo__text {
+  color: $greydark;
+  font-size: 1.3em;
+  line-height: 1.5;
+  width: 130px;
+}
+
+.createoutwo__detail {
+  margin-left: 0em;
+}
+
+.createoutwo__label {
+  //italic
+  color: $greydark;
+  font-size: 1.3em;
+  display: block;
+  margin: 25px 0px 15px 20px;
+}
+
+.createoutwo__input {
+  outline: none;
+  border: none;
+  background-color: $greylight;
+  margin-left: 20px;
+  padding: 0.8em;
+  width: 270px;
+  font-size: 1.3em;
+  color: $greydark;
+}
+
+.createoutwo__public {
+  font-size: 1.3em;
+  color: $greydark;
+  line-height: 1.5;
+  margin-left: 20px;
+}
+
+.createoutwo__publish {
+  margin-top: 2.5em;
+  margin-bottom: 0.8em;
+  margin-left: 20px;
+}
+
+.createoutwo__container {
+  width: 100px;
+  height: 30px;
+  border-radius: 15px;
+  margin-left: 20px;
+  margin-top: 15px;
+  position: relative;
+  background-color: rgb(200, 200, 200);
+  transition: all 0.4s $easeInOutQuad;
+  padding-left: 20px;
+}
+.round {
+  z-index: 1;
+  width: 22px;
+  height: 22px;
+  border-radius: 11px;
+  background-color: $blue;
+  position: absolute;
+  top: calc(50% - 11px);
+  left: 5px;
+  right: initial;
+  transition: all 0.4s $easeInOutQuad;
+}
+
+.createoutwo__switch--private,
+.createoutwo__switch--public {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.createoutwo__switch--private {
+  transition: all 0.4s $easeInOutQuad;
+  -webkit-clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+  clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+  left: 25px;
+}
+.createoutwo__switch--public {
+  color: white;
+  transition: all 0.4s $easeInOutQuad;
+  -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+  clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+  right: 25px;
+}
+
+.switch {
+  display: none;
+}
+
+.switch:checked ~ .createoutwo__container {
+  background-color: $blue;
+}
+
+.switch:checked ~ .createoutwo__container .createoutwo__switch--private {
+  -webkit-clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+  clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+}
+
+.switch:checked ~ .createoutwo__container .createoutwo__switch--public {
+  -webkit-clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+  clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+}
+
+.switch:checked ~ .createoutwo__container .round {
+  -webkit-clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+  clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+  left: 91px;
+  background-color: #ccc;
+}
+
+.createoutwo__submit {
+  text-decoration: none;
+  border-radius: 50px;
+  background-color: $blue;
+  color: white;
+  font-family: $font;
+  text-transform: uppercase;
+  margin: 2em auto 3em;
+  display: block;
+  font-size: 1.3em;
+  padding: 10px 55px;
+  border: none;
+}
+
+/*//////////////// CREATE OUTFIT TWO ////////////// */
+
+#searchouter,
+#searchfriend {
+  width: 320px;
+  margin: 0 auto;
+  font-size: 62.5%;
+  font-family: $font;
+}
+
+.searchouterTitle,
+.searchfriendTitle {
+  @include titlesecondblue;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+//For search input see myoutfit__search
+
+.searchouterText,
+.searchfriendText {
+  color: $greydark;
+  font-size: 1.3em;
+  line-height: 1.5;
+  margin: 1em 1.5em;
+  font-family: $font;
+}
+
+.userAction {
+  display: flex;
+  margin: 3em 0em 3em 1.5em;
+  border-bottom: 1px solid $greylight;
+  padding-bottom: 3em;
+}
+
+.userActionInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.userActionName {
+  color: $greydark;
+  font-size: 1.3em;
+  margin-left: 1em;
+  margin-top: 1.3em;
+  font-family: $font;
+}
+
+.userActionImg {
+  width: 80px;
+  height: 80px;
+}
+
+.userActionPadding {
+  padding-bottom: 1em;
+}
+
+.userActionIconRemove:before {
+  content: url("../icones/remove.svg");
+  padding-right: 0.5em;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 0px;
+  left: 13px;
+}
+
+.userActionIconRemove {
+  text-decoration: none;
+  font-size: 1.3em;
+  color: $greydark;
+  text-transform: uppercase;
+  position: relative;
+  padding-left: 2.5em;
+  padding-top: 0.2em;
+  font-family: $font;
+}
+
+.userActionIconAdd:before {
+  content: url("../icones/add.svg");
+  padding-right: 0.5em;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 0;
+  left: 13px;
+}
+
+.userActionIconAdd {
+  text-decoration: none;
+  font-size: 1.3em;
+  color: $greydark;
+  text-transform: uppercase;
+  position: relative;
+  padding-left: 2.5em;
+  margin-top: 1.5em;
+  padding-top: 0.2em;
+  font-family: $font;
+}
+
+/*//////////////// PROFILE SETTING ////////////// */
+
+#profile {
+  width: 320px;
+  margin: 0 auto;
+  font-size: 62.5%;
+  font-family: $font;
+}
+
+.profileTitle {
+  @include titlemainblue;
+}
+
+.logoutButton {
+  @include buttonwhite;
+  border: 1px solid $blue;
+  display: block;
+  margin: 1.3em auto 3em;
+}
+
+.profileHeader {
+  align-items: center;
+  align-content: center;
+}
+
+.profileReturn,
+.profileNotif {
+  margin-top: 0.8em;
+}
+
+.profileInputPic {
+  display: none;
+}
+
+.profileLabelPic {
+  border: 1px solid $blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  margin: 1em auto;
+}
+
+.profileTextPic {
+  font-size: 1.3em;
+  color: $greydark;
+  text-align: center;
+  font-family: $font;
+}
+
+.profileForm {
+  margin: 2em 0em 3em;
+}
+
+.profileSpanBarreVertical {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: $blue;
+  border-radius: 10px;
+  transform: rotate(90deg);
+  position: absolute;
+  top: calc(50%-3px);
+  left: calc(50%-30px);
+}
+
+.profileSpanBarreHorizontal {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: $blue;
+  border-radius: 10px;
+  position: absolute;
+  top: calc(50%-3px);
+  left: calc(50%-30px);
+}
+/*//////////////// SCAN ////////////// */
+
+#scan {
+  width: 320px;
+  margin: 0 auto;
+  font-size: 62.5%;
+  font-family: $font;
+}
+
+.scanTitle {
+  @include titlesecondblue;
+}
+
+.scanText {
+  font-size: 1.3em;
+  color: $greydark;
+  line-height: 1em;
+  margin: 10px 15px;
+  font-family: $font;
+}
+
+.scanPicture {
+  @include buttonblue;
+  display: block;
+  margin: 1em auto 3em;
+}
+
+/*//////////////// SCANIT ////////////// */
+
+#scanit {
+  width: 320px;
+  margin: 0 auto;
+  font-size: 62.5%;
+  font-family: $font;
+}
+
+.scanItTitle {
+  @include titlesecondblue;
+}
+
+.scanItImg {
+  width: 50%;
+  height: 50%;
+  display: block;
+  margin: 2em auto;
+}
+
+.scanItSectitle {
+  text-transform: uppercase;
+  color: $greydark;
+  margin-left: 15px;
+  font-family: $font;
+}
+
+.scanItList {
+  text-align: center;
+}
+
+.scanItListem {
+  font-size: 1.3em;
+  color: $greydark;
+  margin: 1em 0em;
+  font-family: $font;
+}
+
+.scanItLink {
+  @include buttonblue;
+  width: 200px;
+  display: block;
+  margin: 2em auto;
+}
+
+.scanItFeedback {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  //display: flex display none pour l'instant une fois le js de mis, display flex
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  background-color: rgba($color: #ffffff, $alpha: 0.5);
+}
+
+.scanit__popup {
+  background-color: $blue;
+  border-radius: 10px;
+}
+
+.scanit__popupicon {
+  width: 50px;
+  height: 50px;
+  display: block;
+  margin: 2em auto 1em;
+}
+
+.scanit__popuptext {
+  color: white;
+  margin: 1em 2em 3em 2em;
+  font-size: 1.3em;
+  width: 230px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/*//////////////// FRIEND DRESSING ////////////// */
+
+#friendress {
+  width: 320px;
+  margin: 0 auto;
+  font-size: 62.5%;
+  font-family: $font;
+}
+
+// .friendress__info {
+//   background-color: $greylight;
+//   padding: 0.5em 0em;
+// }
+
+.friendressHeaderTitle {
+  @include titlemainblue;
+  //width: 170px;
+  margin: 1em auto 2em;
+  text-align: center;
+}
+
+.friendressProfileImg {
+  width: 8%;
+  height: auto;
+  display: block;
+  margin: 3em auto 1em;
+}
+
+.friendressTitle {
+  @include titlesecondblue;
+}
+
+.friendressImgFlex {
+  display: flex;
+  margin: 1em 1.5em;
+}
+
+.friendressImgTop,
+.friendressImgPant {
+  width: 50%;
+  height: 50%;
+}
+
+.friendressContent {
+  margin-bottom: 4em;
+}
+
+.friendressHeaderTitleSpan {
+  color: $greydark;
+  font-size: 0.8em;
+  display: block;
+  margin-top: 0.2em;
+}
+
+/*//////////////// PROFILE ////////////// */
+
+#picture {
+  width: 320px;
+  margin: 0 auto;
+  font-size: 62.5%;
+  font-family: $font;
+}
+
+.pictureTitle {
+  @include titlesecondblue;
+}
+
+.pictureText {
+  font-size: 1.3em;
+  color: $greydark;
+  line-height: 1.5;
+  margin: 10px 15px;
+}
+
+.pictureLink {
+  background-color: $blue;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2em auto;
+}
+
+.pictureIcon {
+  width: 15px;
+  height: 15px;
+}
+
+.pictureImgItem,
+.picInImgItem {
+  width: 50%;
+  height: 50%;
+  margin: 1em 1.5em;
+}
+
+/*//////////////// PICTURE IN ////////////// */
+
+#picin {
+  width: 320px;
+  margin: 0 auto;
+  font-size: 62.5%;
+  font-family: $font;
+}
+
+.picInTitle {
+  @include titlesecondblue;
+}
+
+.picInTitleSec {
+  font-size: 1.1em;
+  color: $greydark;
+  text-transform: uppercase;
+  margin-left: 15px;
+  font-family: $font;
+}
+
+.picInDivForm {
+  display: flex;
+  flex-direction: column;
+  margin: 1em 1.5em;
+}
+
+.picInLabel {
+  text-transform: uppercase;
+  font-weight: 100;
+  font-family: $font;
+}
+
+.picInInput {
+  outline: none;
+  border: none;
+  box-shadow: none;
+  border-bottom: 1px solid $blue;
+  margin-bottom: 2em;
+  padding: 0.8em;
+}
+
+.picInSubmit {
+  @include buttonblue;
+  border: none;
+  text-align: center;
+  width: 280px;
+  display: block;
+  margin: 0em auto 4em;
+}
+
+/*//////////////// NOTIFICATION  ////////////// */
+
+#notif {
+  width: 320px;
+  margin: 0 auto;
+  font-size: 62.5%;
+  font-family: $font;
+}
+
+.notifTitle {
+  @include titlesecondblue;
+}
+
+.notifImgUser {
+  width: 30px;
+  height: 30px;
+}
+
+.notifContent {
+  margin: 1em 1.5em;
+}
+
+.notifList {
+  display: flex;
+  align-items: center;
+}
+
+.notifText {
+  font-size: 1.3em;
+  color: $greydark;
+  margin-left: 1em;
+  font-family: $font;
+}
+
+.notifDetail {
+  margin-left: 2.9em;
+  margin-top: 0em;
+}
+
+.notifListContent {
+  margin-top: 2em;
+  border-bottom: 1px solid $greylight;
+  padding-bottom: 0.5em;
+  position: relative;
+}
+
+.notifHeart {
+  background-color: $blue;
+  width: 15px;
+  height: 15px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 20px;
+  left: 18px;
+}
+
+.notifHeartIcon {
+  with: 10px;
+  height: 10px;
+}
